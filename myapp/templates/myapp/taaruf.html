@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+	<title>BizBook Directory Template by Rn53Themes.net</title>
+	<!--== META TAGS ==-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#76cef1" />
+    <meta property="og:image" content="{% static 'myapp/images/home/logo-b.png' %}" />
+    <meta name="description" content="Kick start your online directory with BizBook Directory Template. Its comes with ultimate features like listings, events, blog, community. Try Bizbook directory now!">
+	<meta name="keyword" content="bizbook directory, bizbook directory template, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template">
+	<!--== FAV ICON(BROWSER TAB ICON) ==-->
+	<link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+	<!--== GOOGLE FONTS ==-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+	<!--== WEB ICON FONTS ==-->
+	<link rel="preload" as="font" href="css/icon.woff2" type="font/woff2" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--== CSS FILES ==-->
+    <link rel="stylesheet" href="{% static 'myapp/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/fonts.css' %}">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<!-- Preloader -->
+	<section>
+		<!-- Headbar -->
+		<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-light">
+			<div class="container">
+			<!-- Logo -->
+			<a class="navbar-brand" href="index.html">
+                <img src="{% static 'myapp/images/logo.png' %}" alt="Logo" style="height: 50px;">
+			</a>
+			<!-- Menu -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Beranda</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'taaruf' %}">Ta'aruf</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'blog-posts' %}">Pra-Nikah</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'all-products' %}">Mitra Nikah</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
+			  </ul>
+			  <a class="btn btn-primary ml-3" href="login.html">User</a>
+			</div>
+		  </div>
+		</nav>
+        <div class="container py-5">
+            <h2 class="text-center mb-4 mt-5">Ta'aruf Chat</h2>
+            <div class="card">
+                <!-- Header Chat -->
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <span id="chatModeTitle">Chat Umum</span>
+                    <div>
+                        <button class="btn btn-outline-secondary btn-sm" id="chatUmumBtn">Chat Umum</button>
+                        <button class="btn btn-outline-primary btn-sm" id="chatPrivateBtn" disabled>Chat Private</button>
+                    </div>
+                </div>
+        
+                <!-- Body Chat -->
+                <div class="card-body">
+                    <!-- Chat Box -->
+                    <div
+                        class="chat-box mb-3"
+                        id="chatBox"
+                        style="height: 300px; overflow-y: auto; background-color: #f8f9fa; border-radius: 5px; padding: 10px;"
+                    >
+                        <!-- Chat Umum -->
+                        <div id="chatUmumContent">
+                            <div class="chat-message user" data-user="Ali">
+                                <strong>Ali:</strong>
+                                <p>Assalamu'alaikum, apa kabar semua?</p>
+                            </div>
+                            <div class="chat-message user" data-user="Fatimah">
+                                <strong>Fatimah:</strong>
+                                <p>Wa'alaikumsalam, alhamdulillah baik.</p>
+                            </div>
+                            <div class="chat-message user" data-user="Aisyah">
+                                <strong>Aisyah:</strong>
+                                <p>Assalamu'alaikum, bagaimana hari ini?</p>
+                            </div>
+                        </div>
+                        <!-- Chat Private -->
+                        <div id="chatPrivateContent" style="display: none;">
+                            <!-- Pesan pribadi akan ditampilkan di sini -->
+                        </div>
+                    </div>
+        
+                    <!-- Chat Input -->
+                    <form id="chatForm" class="d-flex">
+                        <input
+                            type="text"
+                            id="chatMessage"
+                            class="form-control me-2"
+                            placeholder="Ketik pesan Anda..."
+                            required
+                        />
+                        <button type="submit" class="btn btn-success">Kirim</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    <!-- Footer -->
+    <section class="wed-hom-footer">
+        <div class="container">
+            <div class="row foot-supp">
+                <h2><span>Email:</span> support@etamkawin.com</h2>
+            </div>
+            <div class="row wed-foot-link">
+                <div class="col-md-6 foot-tc-mar-t-o">
+                    <h4>Kategori Populer</h4>
+                    <ul>
+                        <li><a href="all-product.html">Vendor Dekorasi</a></li>
+                        <li><a href="all-product.html">Layanan Dokumentasi</a></li>
+                        <li><a href="all-product.html">Katering Pernikahan</a></li>
+                        <li><a href="all-product.html">Wedding Organizer</a></li>
+                        <li><a href="all-product.html">Souvenir Pernikahan</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Help & Support</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="feedback.html">Berikan Feedback</a></li>
+                        <li><a href="contact-us.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row foot-count">
+                <p>Copyright © 2023 <a href="https://mustdhiya.com/" target="_blank">Startup Mustdhiya</a>. Powered by EKA (Etam Kawin).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatBox = document.getElementById("chatBox");
+            const chatForm = document.getElementById("chatForm");
+            const chatMessage = document.getElementById("chatMessage");
+            const chatUmumContent = document.getElementById("chatUmumContent");
+            const chatPrivateContent = document.getElementById("chatPrivateContent");
+            const chatUmumBtn = document.getElementById("chatUmumBtn");
+            const chatPrivateBtn = document.getElementById("chatPrivateBtn");
+            const chatModeTitle = document.getElementById("chatModeTitle");
+        
+            let currentMode = "umum"; // Default mode is 'Chat Umum'
+            let selectedUser = null; // Menyimpan pengguna yang dipilih untuk chat private
+        
+            // Handle Chat Message Submission
+            chatForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                if (chatMessage.value.trim() !== "") {
+                    const userMessage = document.createElement("div");
+                    userMessage.classList.add("chat-message", "user");
+                    userMessage.innerHTML = `<strong>You:</strong> <p>${chatMessage.value}</p>`;
+        
+                    if (currentMode === "umum") {
+                        chatUmumContent.appendChild(userMessage);
+                    } else if (selectedUser) {
+                        const userPrivateMessage = document.createElement("div");
+                        userPrivateMessage.classList.add("chat-message", "user");
+                        userPrivateMessage.innerHTML = `<strong>You to ${selectedUser}:</strong> <p>${chatMessage.value}</p>`;
+                        chatPrivateContent.appendChild(userPrivateMessage);
+                    }
+        
+                    chatMessage.value = "";
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+            });
+        
+            // Switch to Chat Umum
+            chatUmumBtn.addEventListener("click", () => {
+                currentMode = "umum";
+                chatModeTitle.textContent = "Chat Umum";
+                chatUmumContent.style.display = "block";
+                chatPrivateContent.style.display = "none";
+                chatPrivateBtn.disabled = true;
+                selectedUser = null;
+            });
+        
+            // Switch to Chat Private
+            chatPrivateBtn.addEventListener("click", () => {
+                currentMode = "private";
+                chatModeTitle.textContent = `Chat Private with ${selectedUser}`;
+                chatUmumContent.style.display = "none";
+                chatPrivateContent.style.display = "block";
+            });
+        
+            // Klik pada pesan di Chat Umum untuk membuka Chat Private
+            chatUmumContent.addEventListener("click", (e) => {
+                const message = e.target.closest(".chat-message");
+                if (message) {
+                    selectedUser = message.getAttribute("data-user");
+                    if (selectedUser) {
+                        chatPrivateContent.innerHTML = ""; // Kosongkan isi chat private
+                        chatModeTitle.textContent = `Chat Private with ${selectedUser}`;
+                        chatUmumContent.style.display = "none";
+                        chatPrivateContent.style.display = "block";
+                        chatPrivateBtn.disabled = false;
+                        currentMode = "private";
+                    }
+                }
+            });
+        });
+        
+        
+    </script>
+        
+    </script>
+    <script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/custom_validation.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+          const navbar = document.getElementById('mainNavbar');
+          navbar.classList.add('scrolled'); // Tambahkan kelas scrolled secara permanen
+        });
+      </script>
+      
+</body>
+
+</html>

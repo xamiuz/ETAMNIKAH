@@ -1,0 +1,270 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+	<title>BizBook Directory Template by Rn53Themes.net</title>
+	<!--== META TAGS ==-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#76cef1" />
+	<meta property="og:image" content="images/home/logo-b.png" />
+	<meta name="description" content="Kick start your online directory with BizBook Directory Template. Its comes with ultimate features like listings, events, blog, community. Try Bizbook directory now!">
+	<meta name="keyword" content="bizbook directory, bizbook directory template, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template">
+	<!--== FAV ICON(BROWSER TAB ICON) ==-->
+	<link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+	<!--== GOOGLE FONTS ==-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+	<!--== WEB ICON FONTS ==-->
+	<link rel="preload" as="font" href="css/icon.woff2" type="font/woff2" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--== CSS FILES ==-->
+    <link rel="stylesheet" href="{% static 'myapp/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'myapp/css/fonts.css' %}">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<section>
+		<!-- Headbar -->
+		<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-light">
+			<div class="container">
+			<!-- Logo -->
+			<a class="navbar-brand" href="index.html">
+			  <img src="{% static 'myapp/images/logo.png' %}" alt="Logo" style="height: 50px;">
+			</a>
+			<!-- Menu -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Beranda</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'taaruf' %}">Ta'aruf</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'blog-posts' %}">Pra-Nikah</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'all-products' %}">Mitra Nikah</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
+			  </ul>
+			  <a class="btn btn-primary ml-3" href="login.html">Login/Daftar</a>
+			</div>
+		  </div>
+		</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- END -->
+	<section class="biz-pro">
+		<div class="container">
+			<div class="row">
+				<!-- Vendor Images -->
+				<div class="col-md-5 lhs">
+					<div class="bpro-sli">
+						<div id="vendorCarousel" class="carousel slide" data-ride="carousel">
+							<!-- The slideshow -->
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="{% static 'myapp/images/vendor3.jpg' %}" alt="Vendor Pernikahan 1" class="d-block w-100">
+								</div>
+								<div class="carousel-item">
+									<img src="{% static 'myapp/images/vendor3.jpg' %}" alt="Vendor Pernikahan 2" class="d-block w-100">
+								</div>
+								<div class="carousel-item">
+									<img src="{% static 'myapp/images/vendor3.jpg' %}" alt="Vendor Pernikahan 3" class="d-block w-100">
+								</div>
+							</div>
+							<!-- Left and right controls -->
+							<a class="carousel-control-prev" href="#vendorCarousel" data-slide="prev"> 
+								<span class="carousel-control-prev-icon"></span>
+							</a>
+							<a class="carousel-control-next" href="#vendorCarousel" data-slide="next"> 
+								<span class="carousel-control-next-icon"></span>
+							</a>
+						</div>
+					</div>
+					<div class="biz-pro-btn mt-3 text-center">
+						<button type="button" style="background-color: #50c878; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#quoteModal">
+							Dapatkan Penawaran
+						</button>
+						<a href="#" style="background-color: #76cef1; color: white; border: none; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-left: 10px;">
+							Hubungi Vendor
+						</a>
+					</div>
+					
+				</div>
+				<!-- Vendor Details -->
+				<div class="col-md-7 rhs">
+					<div class="pro-pri-box">
+						<div class="pro-pbox-2">
+							<span class="veri badge badge-success">Terverifikasi</span>
+							<h1>Diamond Hall Tenggarong</h1>
+							<span class="rat badge badge-warning">4.5</span>
+							<span class="pro-cost">Mulai dari Rp 12.000.000 <b class="pro-off">Diskon 10%</b></span>
+						</div>
+						<div class="pro-pbox-3 pro-pbox-com">
+							<h4>Fasilitas Utama</h4>
+							<ul>
+								<li>Dekorasi mewah sesuai tema</li>
+								<li>Kapastitas hingga 500 tamu</li>
+								<li>Area parkir luas</li>
+								<li>Sound system premium</li>
+								<li>Layanan katering lengkap</li>
+							</ul>
+						</div>
+						<div class="pro-pbox-4 pro-pbox-com">
+							<h4>Deskripsi</h4>
+							<p>Diamond Hall Tenggarong adalah tempat pernikahan terbaik di area Tenggarong dengan fasilitas mewah dan pelayanan profesional. Tempat ini dilengkapi dengan dekorasi modern, katering berkualitas, dan layanan teknis terbaik untuk memastikan momen spesial Anda berjalan sempurna.</p>
+						</div>
+						<div class="pro-pbox-5 pro-pbox-com">
+							<h4>Spesifikasi</h4>
+							<ul>
+								<li><span class="pro-spe-li">Lokasi:</span><span class="pro-spe-po"> Tenggarong, Kalimantan Timur</span></li>
+								<li><span class="pro-spe-li">Kapasitas:</span><span class="pro-spe-po"> Hingga 500 tamu</span></li>
+								<li><span class="pro-spe-li">Layanan Tambahan:</span><span class="pro-spe-po"> Dokumentasi dan WO</span></li>
+								<li><span class="pro-spe-li">Waktu Operasional:</span><span class="pro-spe-po"> 10:00 - 22:00</span></li>
+								<li><span class="pro-spe-li">Fasilitas:</span><span class="pro-spe-po"> Parkir Luas, Dekorasi</span></li>
+							</ul>
+						</div>
+						<div class="pro-pbox-7 pro-pbox-com">
+							<h4>Tags</h4>
+							<a href="#">Venue</a>
+							<a href="#">Pernikahan</a>
+							<a href="#">Dekorasi</a>
+							<a href="#">Kalender</a>
+							<a href="#">Vendor</a>
+						</div>
+						<div class="pro-pbox-6 pro-pbox-com position-relative text-center">
+							<!-- Sampul -->
+							<div class="cover-photo">
+								<img src="images/cover.jpg" alt="Sampul Vendor" class="w-100 rounded" style="height: 150px; object-fit: cover;">
+							</div>
+						
+							<!-- Foto Profil -->
+							<div class="profile-photo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+								<img src="images/user/3.jpg" alt="Vendor" class="rounded-circle border border-white" width="100">
+							</div>
+						
+							<!-- Informasi Vendor -->
+							<div class="mt-5">
+								<h4>Claude D Dial</h4>
+								<b>Bergabung sejak Januari 2020</b>
+								<div class="mt-2">
+									<a href="profile.html" target="_blank" class="btn btn-link text-primary">Lihat Profil</a>
+								</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!--END-->
+	<!-- START -->
+	<section class="eve-deta-body blog-deta-body">
+		<div class="container">
+			<div class="pro-bot-shar">
+				<h4>Share this post</h4>
+				<ul>
+					<li>
+						<div class="sh-pro-shar sh-pro-face">
+							<a target="_blank" href="https://www.facebook.com/sharer/sharer.html?u=product/weight-loss-digital-products?src=facebook&quote=Weight loss digital products">
+								<img src="images/social/3.png" alt="">Facebook</a>
+						</div>
+					</li>
+					<li>
+						<div class="sh-pro-shar sh-pro-twi">
+							<a target="_blank" href="http://twitter.com/share?text=Weight loss digital products&url=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fproduct%2Fweight-loss-digital-products%3Fsrc%3Dtwitter">
+								<img src="images/social/2.png" alt="">Twitter</a>
+						</div>
+					</li>
+					<li>
+						<div class="sh-pro-shar sh-pro-what">
+							<a target="_blank" href="whatsapp://send?text=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fproduct%2Fweight-loss-digital-products%3Fsrc%3Dwhatsapp">
+								<img src="images/social/6.png" alt="">WhatsApp</a>
+						</div>
+					</li>
+					<li>
+						<div class="sh-pro-shar sh-pro-link">
+							<a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fproduct%2Fweight-loss-digital-products%26%26src%3Dlinkedin">
+								<img src="images/social/1.png" alt="">Linkedin</a>
+						</div>
+					</li>
+					<li>
+						<div style="background-color: #da271a" class="sh-pro-shar sh-pro-pin">
+							<a target="_blank" href="https://www.pinterest.com/pin/create/bookmarklet/?media=images/products/33804awesomebooks-new3.jpg&url=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fproduct%2Fweight-loss-digital-products%26%26src%3Dpinterest&description=Weight loss digital products">
+								<img src="images/social/9.png" alt="">Pinterest</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+	</section>
+	<!-- END -->
+	    <!-- Footer -->
+		<section class="wed-hom-footer">
+			<div class="container">
+				<div class="row foot-supp">
+					<h2><span>Email:</span> support@etamkawin.com</h2>
+				</div>
+				<div class="row wed-foot-link">
+					<div class="col-md-6 foot-tc-mar-t-o">
+						<h4>Kategori Populer</h4>
+						<ul>
+							<li><a href="all-product.html">Vendor Dekorasi</a></li>
+							<li><a href="all-product.html">Layanan Dokumentasi</a></li>
+							<li><a href="all-product.html">Katering Pernikahan</a></li>
+							<li><a href="all-product.html">Wedding Organizer</a></li>
+							<li><a href="all-product.html">Souvenir Pernikahan</a></li>
+						</ul>
+					</div>
+					<div class="col-md-6">
+						<h4>Help & Support</h4>
+						<ul>
+							<li><a href="about.html">Tentang Kami</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li><a href="feedback.html">Berikan Feedback</a></li>
+							<li><a href="contact-us.html">Hubungi Kami</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row foot-count">
+					<p>Copyright © 2023 <a href="https://mustdhiya.com/" target="_blank">Startup Mustdhiya</a>. Powered by EKA (Etam Kawin).</p>
+				</div>
+			</div>
+		</section>
+	
+    
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/custom_validation.js"></script>
+	<script>
+        window.addEventListener('DOMContentLoaded', function () {
+          const navbar = document.getElementById('mainNavbar');
+          navbar.classList.add('scrolled'); // Tambahkan kelas scrolled secara permanen
+        });
+      </script>
+</body>
+
+</html>

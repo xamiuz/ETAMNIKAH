@@ -1,0 +1,243 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+	<title>BizBook Directory Template by Rn53Themes.net</title>
+	<!--== META TAGS ==-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#76cef1" />
+	<meta property="og:image" content="{% static 'myapp/images/home/logo-b.png' %}" />
+	<meta name="description"
+		content="Kick start your online directory with BizBook Directory Template. Its comes with ultimate features like listings, events, blog, community. Try Bizbook directory now!">
+	<meta name="keyword"
+		content="bizbook directory, bizbook directory template, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template">
+	<!--== FAV ICON(BROWSER TAB ICON) ==-->
+	<link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+	<!--== GOOGLE FONTS ==-->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Source+Sans+Pro:300,400,600,700&display=swap"
+		rel="stylesheet">
+	<!--== WEB ICON FONTS ==-->
+	<link rel="preload" as="font" href="css/icon.woff2" type="font/woff2" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--== CSS FILES ==-->
+	<link rel="stylesheet" href="{% static 'myapp/css/jquery-ui.css' %}">
+	<link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css'%}">
+	<link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'myapp/css/fonts.css'%}">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<section>
+		<!-- Headbar -->
+		<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-light">
+			<div class="container">
+				<!-- Logo -->
+				<a class="navbar-brand" href="index.html">
+					<img src="{% static 'myapp/images/logo.png' %}" alt="Logo" style="height: 50px;">
+				</a>
+				<!-- Menu -->
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Beranda</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'taaruf' %}">Ta'aruf</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'blog-posts' %}">Pra-Nikah</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'all-products' %}">Mitra Nikah</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
+					</ul>
+					<a class="btn btn-primary ml-3" href="login.html">Login/Daftar</a>
+				</div>
+			</div>
+		</nav>
+		<!-- Gambar di Bawah Navbar -->
+		<div class="hom-head"
+			style="background-image: url('{% static 'myapp/images/nikah.jpg' %}'); background-size: cover; background-position: center; height: 400px;">
+			<div class="ban-tit">
+				<h1><b>Bersama untuk Momen<br>Terindah dalam Hidup Anda</b></h1>
+				<p>Kisah Cinta Anda Dimulai di Sini</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row justify-content-center align-items-center text-center">
+				<div class="col-md-4 mb-4">
+					<div class="p-3 shadow rounded">
+						<img src="{% static 'myapp/images/icon/1.png' %}" alt="Icon Ta'aruf" class="mb-3">
+						<h4>Ta'aruf</h4>
+						<p>Temukan pasangan yang sejalan dengan visi Anda melalui fitur ta'aruf yang aman, rahasia, dan
+							Islami.</p>
+						<a href="#taaruf.html" class="btn btn-primary">Explore Now</a>
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="p-3 shadow rounded">
+						<img src="{% static 'myapp/images/icon/2.png' %}" alt="Icon Ta'aruf" class="mb-3">
+						<h4>Pra-Nikah</h4>
+						<p>Persiapkan perjalanan hidup bersama dengan layanan konseling pra-nikah, pelatihan komunikasi.
+						</p>
+						<a href="#blog-posts.html" class="btn btn-primary">Explore Now</a>
+					</div>
+				</div>
+				<div class="col-md-4 mb-4">
+					<div class="p-3 shadow rounded">
+						<img src="{% static 'myapp/images/icon/3.png' %}" alt="Icon Ta'aruf" class="mb-3">
+						<h4>Mitra Nikah</h4>
+						<p>Pilih dari berbagai vendor terpercaya untuk memenuhi kebutuhan pernikahan Anda.</p>
+						<a href="#all-products.html" class="btn btn-primary">Explore Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+	</section>
+	{% block content %}
+
+	{% endblock %}
+	<section class="wed-hom-footer">
+		<div class="container">
+			<!-- Informasi Kontak -->
+			<div class="row foot-supp">
+				<h2> &nbsp;&nbsp;|&nbsp;&nbsp; <span>Email:</span> support@etamkawin.com</h2>
+			</div>
+			<!-- Kategori Populer -->
+			<div class="row wed-foot-link">
+				<div class="col-md-6 foot-tc-mar-t-o">
+					<h4>Kategori Populer</h4>
+					<ul>
+						<li><a href="all-products.html">Vendor Dekorasi</a></li>
+						<li><a href="all-products.html">Layanan Dokumentasi</a></li>
+						<li><a href="all-products.html">Katering Pernikahan</a></li>
+						<li><a href="all-products.html">Wedding Organizer</a></li>
+						<li><a href="all-products.html">Souvenir Pernikahan</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="about.html">Tentang Kami</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+						<li><a href="feedback.html">Berikan Feedback</a></li>
+						<li><a href="contact-us.html">Hubungi Kami</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- TAG Populer -->
+			<div class="row wed-foot-link-pop">
+				<div class="col-md-12">
+					<h4>Tags Populer</h4>
+					<ul>
+						<li><a href="all-products.html">Dekorasi Pernikahan Samarinda</a></li>
+						<li><a href="all-products.html">Katering Halal Terbaik</a></li>
+						<li><a href="all-products.html">Jasa Fotografi Wedding</a></li>
+						<li><a href="all-products.html">Wedding Organizer Terpercaya</a></li>
+						<li><a href="all-products.html">Vendor Souvenir Unik</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Informasi Perusahaan -->
+			<div class="row wed-foot-link-1">
+				<div class="col-md-4">
+					<h4>Hubungi Kami</h4>
+					<p>Alamat: Jl. Mawar Indah No. 123, Samarinda, Indonesia</p>
+					<p>Telepon: <a href="tel:+62 812-3456-7890">+62 812-3456-7890</a></p>
+					<p>Email: <a href="mailto:support@etamkawin.com">support@etamkawin.com</a></p>
+				</div>
+				<div class="col-md-4 fot-app">
+					<h4>Unduh Aplikasi Mobile Kami</h4>
+					<ul>
+						<li><a href=""><img src="{% static 'myapp/images/gstore.png' %}" alt=""></a></li>
+						<li><a href=""><img src="{% static 'myapp/images/astore.png' %}" alt=""></a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 fot-soc">
+					<h4>Media Sosial</h4>
+					<ul>
+						<li><a target="_blank" href="https://facebook.com/etamkawin"><img
+									src="{% static 'myapp/images/social/1.png' %}" alt=""></a></li>
+						<li><a target="_blank" href="https://facebook.com/etamkawin"><img
+									src="{% static 'myapp/images/social/2.png' %}" alt=""></a></li>
+						<li><a target="_blank" href="https://facebook.com/etamkawin"><img
+									src="{% static 'myapp/images/social/3.png' %}" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- Hak Cipta -->
+			<div class="row foot-count">
+				<p>Copyright © 2023 <a href="https://mustdhiya.com/" target="_blank">Startup Mustdhiya</a>. Powered by
+					EKA (Etam Kawin).</p>
+			</div>
+		</div>
+	</section>
+
+	</section>
+	<script src="js/jquery.min.js"></script>
+	<style>
+		.hom-top {
+			transition: all 0.5s ease;
+			background: none;
+			box-shadow: none;
+		}
+
+		.top-ser {
+			display: none;
+		}
+
+		.dmact .top-ser {
+			display: block;
+		}
+
+		.caro-home {
+			margin-top: 90px;
+			float: left;
+			width: 100%;
+		}
+
+		.carousel-item:before {
+			background: none;
+		}
+	</style>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/custom.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/custom_validation.js"></script>
+	<script>
+		$(window).scroll(function () {
+			var scroll = $(window).scrollTop();
+			if (scroll >= 250) {
+				$(".hom-top").addClass("dmact");
+			}
+			else {
+				$(".hom-top").removeClass("dmact");
+			}
+		});
+	</script>
+	<script>
+		window.addEventListener('scroll', function () {
+			const navbar = document.getElementById('mainNavbar');
+			if (window.scrollY > 50) { // Jika scroll lebih dari 50px
+				navbar.classList.add('scrolled');
+			} else {
+				navbar.classList.remove('scrolled');
+			}
+		});
+	</script>
+
+</body>
+
+</html>

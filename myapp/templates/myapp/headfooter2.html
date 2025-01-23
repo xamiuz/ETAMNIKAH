@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+
 <html lang="en">
 
 <head>
@@ -9,16 +10,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="theme-color" content="#76cef1" />
-	<meta property="og:image" content="{% static 'myapp/images/home/logo-b.png' %}" />
-	<meta name="description"
-		content="Kick start your online directory with BizBook Directory Template. Its comes with ultimate features like listings, events, blog, community. Try Bizbook directory now!">
-	<meta name="keyword"
-		content="bizbook directory, bizbook directory template, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template">
+	<meta property="og:image" content="images/home/logo-b.png" />
+	<meta name="description" content="Kick start your online directory with BizBook Directory Template. Its comes with ultimate features like listings, events, blog, community. Try Bizbook directory now!">
+	<meta name="keyword" content="bizbook directory, bizbook directory template, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template">
 	<!--== FAV ICON(BROWSER TAB ICON) ==-->
 	<link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
 	<!--== GOOGLE FONTS ==-->
-	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Source+Sans+Pro:300,400,600,700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
 	<!--== WEB ICON FONTS ==-->
 	<link rel="preload" as="font" href="css/icon.woff2" type="font/woff2" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -30,8 +28,8 @@
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-    <script src="{% static 'myapp/js/html5shiv.js'%}"></script>
-    <script src="{% static 'myapp/js/respond.min.js'%}"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
 
@@ -40,27 +38,29 @@
 		<!-- Headbar -->
 		<nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top navbar-light">
 			<div class="container">
-				<!-- Logo -->
-				<a class="navbar-brand" href="{% url 'home' %}">
-					<img src="{% static 'myapp/images/logo.png' %}" alt="Logo" style="height: 50px;">
-				</a>
-				<!-- Menu -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Beranda</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'taaruf' %}">Ta'aruf</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'blog-posts' %}">Pra-Nikah</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'all-products' %}">Mitra Nikah</a></li>
-						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
-					</ul>
-					<a class="btn btn-primary ml-3" href="{% url 'login' %}">Login/Daftar</a>
-				</div>
+			<!-- Logo -->
+			<a class="navbar-brand" href="index.html">
+			  <img src="images/logo.png" alt="Logo" style="height: 50px;">
+			</a>
+			<!-- Menu -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+			  <ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Beranda</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'taaruf' %}">Ta'aruf</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'blog-posts' %}">Pra-Nikah</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'all-products' %}">Mitra Nikah</a></li>
+				<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">Tentang Kami</a></li>
+			  </ul>
+			  <a class="btn btn-primary ml-3" href="">User</a>
 			</div>
+		  </div>
 		</nav>
+	<!-- END -->
+	<!-- END -->
+	<!-- START -->
 	{% block content %}
 
 	{% endblock %}
@@ -142,31 +142,6 @@
 
 	</section>
 	<script src="{% static 'myapp/js/jquery.min.js'%}"></script>
-	<style>
-		.hom-top {
-			transition: all 0.5s ease;
-			background: none;
-			box-shadow: none;
-		}
-
-		.top-ser {
-			display: none;
-		}
-
-		.dmact .top-ser {
-			display: block;
-		}
-
-		.caro-home {
-			margin-top: 90px;
-			float: left;
-			width: 100%;
-		}
-
-		.carousel-item:before {
-			background: none;
-		}
-	</style>
 	<script src="{% static 'myapp/js/popper.min.js'%}"></script>
 	<script src="{% static 'myapp/js/bootstrap.min.js'%}"></script>
 	<script src="{% static 'myapp/js/jquery-ui.js'%}"></script>
@@ -174,27 +149,11 @@
 	<script src="{% static 'myapp/js/jquery.validate.min.js'%}"></script>
 	<script src="{% static 'myapp/js/custom_validation.js'%}"></script>
 	<script>
-		$(window).scroll(function () {
-			var scroll = $(window).scrollTop();
-			if (scroll >= 250) {
-				$(".hom-top").addClass("dmact");
-			}
-			else {
-				$(".hom-top").removeClass("dmact");
-			}
-		});
-	</script>
-	<script>
-		window.addEventListener('scroll', function () {
-			const navbar = document.getElementById('mainNavbar');
-			if (window.scrollY > 50) { // Jika scroll lebih dari 50px
-				navbar.classList.add('scrolled');
-			} else {
-				navbar.classList.remove('scrolled');
-			}
-		});
-	</script>
-
+        window.addEventListener('DOMContentLoaded', function () {
+          const navbar = document.getElementById('mainNavbar');
+          navbar.classList.add('scrolled'); // Tambahkan kelas scrolled secara permanen
+        });
+      </script>
 </body>
 
 </html>

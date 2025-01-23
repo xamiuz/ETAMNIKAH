@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'adminapp',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,9 @@ ROOT_URLCONF = 'ETAMPROJECT.urls'
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Tambahkan baris ini
 STATICFILES_DIRS = [
-    BASE_DIR / 'myapp/static',  # App-specific static files
+    BASE_DIR / 'static',  # Static files global
+    BASE_DIR / 'myapp/static',  # Static files khusus myapp
+    BASE_DIR / 'adminapp/static',  # Static files khusus adminapp
 ]
 TEMPLATES = [
     {

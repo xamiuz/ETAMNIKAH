@@ -13,8 +13,8 @@ def all_products(request):
     return render(request, 'myapp/all-products.html')
 
 # Halaman detail blog
-def blog_details(request, pk):
-    return render(request, 'myapp/blog-details.html', {'pk': pk})
+def blog_details(request):
+    return render(request, 'myapp/blog-details.html')
 
 # Halaman daftar blog
 def blog_posts(request):
@@ -29,8 +29,8 @@ def login(request):
     return render(request, 'myapp/login.html')
 
 # Halaman detail produk
-def product_details(request, pk):
-    return render(request, 'myapp/product-details.html', {'pk': pk})
+def product_details(request):
+    return render(request, 'myapp/product-details.html')
 
 # Halaman profil
 def profile(request):

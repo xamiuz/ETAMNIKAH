@@ -3,7 +3,7 @@
 {% block content %}
 <section class="eve-deta-pg py-5">
     <div class="container">
-        <div class="eve-deta-pg-main">
+        <div class="eve-deta-pg-main row justify-content-center">
             <div class="lhs">
                 <div class="img">
                     <img id="image-preview" src="{% static 'myapp/images/gambar_pranikah.jpg' %}" class="card-img-top" alt="Pranikah">
@@ -12,60 +12,12 @@
                     <h1>Pranikah eps 1</h1>
                 </div>
             </div>
-			<div class="rhs">
-				<div class="list-rhs-form pglist-bg pglist-p-com">
-					<div class="quote-pop">
-						<h3>Ikuti Zoom ini!</h3>
-						<div id="blog_detail_enq_success" class="log" style="display: none;">
-							<p>Your Enquiry Is Submitted Successfully</p>
-						</div>
-						<div id="blog_detail_enq_same" class="log" style="display: none;">
-							<p>You cannot make enquiry on your own blog</p>
-						</div>
-						<div id="blog_detail_enq_fail" class="log" style="display: none;">
-							<p>Something Went Wrong!!!</p>
-						</div>
-						<form method="post" name="blog_detail_enquiry_form" id="blog_detail_enquiry_form">
-							<input type="hidden" class="form-control" name="blog_id" value="17" placeholder="" required>
-							<input type="hidden" class="form-control" name="listing_user_id" value="44" placeholder="" required>
-							<input type="hidden" class="form-control" name="enquiry_sender_id" value="37" placeholder="" required>
-							<input type="hidden" class="form-control" name="enquiry_source" value="Website" placeholder="" required>
-							<div class="form-group">
-								<input type="text" name="enquiry_name" value="Rn53 Themes" required="required" class="form-control" placeholder="Enter name*">
-							</div>
-							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Enter email*" required="required" value="rn53themes@gmail.com" name="enquiry_email" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" title="Invalid email address">
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" value="5522114422" name="enquiry_mobile" placeholder="Enter mobile number *" pattern="[7-9]{1}[0-9]{9}" title="Phone number starting with 7-9 and remaing 9 digit with 0-9" required>
-							</div>
-							<div class="form-group">
-								<textarea class="form-control" rows="3" name="enquiry_message" placeholder="Enter your query or message"></textarea>
-							</div>
-							<input type="hidden" id="source">
-							<button type="submit" name="enquiry_submit" class="btn btn-primary">Pembayaran</button>
-						</form>
-					</div>
-				</div>
-			</div>
-        </div>
-    </div>
-</section>
-<section class=" eve-deta-body blog-deta-body">
-	<div class="container">
-		<div class="eve-deta-body-main">
 			<div class="lhs">
 				<div class="list-rhs-form pglist-bg pglist-p-com">
 					<div class="quote-pop">
 						<h3>Tambah Kelas Pranikah!</h3>
 						<div id="blog_detail_enq_success" class="log" style="display: none;">
 							<p>Your Enquiry Is Submitted Successfully</p>
-						</div>
-						<div id="blog_detail_enq_same" class="log" style="display: none;">
-							<p>You cannot make enquiry on your own blog</p>
-						</div>
-						<div id="blog_detail_enq_fail" class="log" style="display: none;">
-							<p>Something Went Wrong!!!</p>
 						</div>
 	
 						<!-- Form Tambah Kelas Pranikah -->
@@ -79,12 +31,7 @@
 							{% endfor %}
 						</div>
 						{% endif %}
-	
-						<!-- Preview Gambar Upload -->
-						<div class="form-group" id="image-preview-container" style="display: none; margin-bottom: 20px;">
-							<label>Preview Gambar</label><br>
-							<img id="image-preview" src="#" alt="Preview Gambar" style="max-width: 100%; height: auto;">
-						</div>
+
 	
 						<form method="post" action="{% url 'pranikah-admin' %}" enctype="multipart/form-data">
 							{% csrf_token %}
@@ -102,6 +49,7 @@
 							</div>
 							<div class="form-group">
 								<label for="id_deskripsi">Deskripsi</label>
+								<!-- Kolom dengan CKEditor -->
 								<textarea class="form-control" id="id_deskripsi" name="deskripsi" rows="3" required></textarea>
 							</div>
 							<div class="form-group">
@@ -114,13 +62,6 @@
 							</div>
 							<button type="submit" class="btn btn-primary">Tambah Kelas</button>
 						</form>
-	
-						<!-- Pesan Sukses Dibawah Tombol -->
-						{% if form.is_valid %}
-						<div class="mt-3">
-							<p class="text-success">Kelas pranikah berhasil ditambahkan!</p>
-						</div>
-						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -128,9 +69,15 @@
 	</div>
 </section>
 
-<!-- JavaScript untuk menampilkan preview gambar -->
+<!-- Script CKEditor -->
+<script src="{% static '/ckeditor/ckeditor/ckeditor.js'%}"></script>
 <script>
-    // Ambil elemen input file dan preview gambar
+	CKEDITOR.replace('id_deskripsi', {
+        
+        resize_enabled: false,
+        versionCheck: false // Menonaktifkan pengecekan versi
+    });
+	// Ambil elemen input file dan preview gambar
     const fileInput = document.getElementById('id_gambar');
     const imagePreview = document.getElementById('image-preview');
     const previewContainer = document.getElementById('image-preview-container');
@@ -150,5 +97,4 @@
         }
     });
 </script>
-
 {% endblock %}

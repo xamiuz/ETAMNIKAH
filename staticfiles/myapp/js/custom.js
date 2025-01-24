@@ -180,6 +180,7 @@ $(document).ready(function () {
     $(".lis-add-ore").on('click', function () {
         $(".add-lis-oth ul li:last-child").remove();
     });
+
     //MOBILE MENU - DASHBOARD BOARD MENU SHOW
     $(".mv-pro").on('click', function () {
         $(".mv-pro-menu").slideToggle();

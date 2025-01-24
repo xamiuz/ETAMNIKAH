@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import PranikahForm
+from .models import Pranikah
+from django.contrib import messages
 
 # Halaman beranda
 def home(request):
     return render(request, 'myapp/index.html')
+
 
 # Halaman tentang kami
 def about(request):
@@ -39,3 +43,20 @@ def profile(request):
 # Halaman ta'aruf
 def taaruf(request):
     return render(request, 'myapp/taaruf.html')
+
+def pranikah_admin(request):
+    # Menangani form submission jika POST
+    if request.method == 'POST':
+        form = PranikahForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Menambahkan pesan keberhasilan
+            messages.success(request, 'Kelas pranikah berhasil ditambahkan!')
+            return redirect('pranikah-admin')  # Redirect kembali ke halaman yang sama setelah data berhasil ditambahkan
+    else:
+        form = PranikahForm()
+
+    # Ambil semua kelas pranikah yang sudah ada untuk ditampilkan
+    pranikahs = Pranikah.objects.all()
+
+    return render(request, 'myapp/pranikah-admin.html', {'form': form, 'pranikahs': pranikahs})

@@ -14,11 +14,11 @@
 	<meta name="description" content="Kick start your online directory with BizBook Directory Template. Its comes with ultimate features like listings, events, blog, community. Try Bizbook directory now!">
 	<meta name="keyword" content="bizbook directory, bizbook directory template, business directory template, php directory template, functional php template, php listing template, php dirctory database, local listing php template">
 	<!--== FAV ICON(BROWSER TAB ICON) ==-->
-	<link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{% static 'myapp/images/logo.png' %}" type="image/x-icon">
 	<!--== GOOGLE FONTS ==-->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:700|Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
 	<!--== WEB ICON FONTS ==-->
-	<link rel="preload" as="font" href="css/icon.woff2" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="{% static 'myapp/css/icon.woff2'%}" type="font/woff2" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--== CSS FILES ==-->
 	<link rel="stylesheet" href="{% static 'myapp/css/jquery-ui.css' %}">
@@ -59,7 +59,6 @@
 		  </div>
 		</nav>
 	<!-- END -->
-	<!-- END -->
 	<!-- START -->
 	{% block content %}
 
@@ -75,11 +74,11 @@
 				<div class="col-md-6 foot-tc-mar-t-o">
 					<h4>Kategori Populer</h4>
 					<ul>
-						<li><a href="all-products.html">Vendor Dekorasi</a></li>
-						<li><a href="all-products.html">Layanan Dokumentasi</a></li>
-						<li><a href="all-products.html">Katering Pernikahan</a></li>
-						<li><a href="all-products.html">Wedding Organizer</a></li>
-						<li><a href="all-products.html">Souvenir Pernikahan</a></li>
+						<li><a href="{% url 'all-products' %}">Vendor Dekorasi</a></li>
+						<li><a href="{% url 'all-products' %}">Layanan Dokumentasi</a></li>
+						<li><a href="{% url 'all-products' %}">Katering Pernikahan</a></li>
+						<li><a href="{% url 'all-products' %}">Wedding Organizer</a></li>
+						<li><a href="{% url 'all-products' %}">Souvenir Pernikahan</a></li>
 					</ul>
 				</div>
 				<div class="col-md-6">
@@ -97,11 +96,11 @@
 				<div class="col-md-12">
 					<h4>Tags Populer</h4>
 					<ul>
-						<li><a href="all-products.html">Dekorasi Pernikahan Samarinda</a></li>
-						<li><a href="all-products.html">Katering Halal Terbaik</a></li>
-						<li><a href="all-products.html">Jasa Fotografi Wedding</a></li>
-						<li><a href="all-products.html">Wedding Organizer Terpercaya</a></li>
-						<li><a href="all-products.html">Vendor Souvenir Unik</a></li>
+						<li><a href="{% url 'all-products' %}">Dekorasi Pernikahan Samarinda</a></li>
+						<li><a href="{% url 'all-products' %}">Katering Halal Terbaik</a></li>
+						<li><a href="{% url 'all-products' %}">Jasa Fotografi Wedding</a></li>
+						<li><a href="{% url 'all-products' %}">Wedding Organizer Terpercaya</a></li>
+						<li><a href="{% url 'all-products' %}">Vendor Souvenir Unik</a></li>
 					</ul>
 				</div>
 			</div>

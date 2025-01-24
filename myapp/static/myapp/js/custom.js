@@ -181,10 +181,6 @@ $(document).ready(function () {
         $(".add-lis-oth ul li:last-child").remove();
     });
 
-    $(document).ready(function() {
-        console.log("custom.js loaded");
-        alert("custom.js loaded");  // Ini akan menampilkan alert di browser
-    });
     //MOBILE MENU - DASHBOARD BOARD MENU SHOW
     $(".mv-pro").on('click', function () {
         $(".mv-pro-menu").slideToggle();

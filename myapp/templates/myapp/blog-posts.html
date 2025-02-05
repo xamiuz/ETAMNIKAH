@@ -1,78 +1,49 @@
 {% extends 'myapp/headfooter2.html' %}
 {% load static %}
 {% block content %}
-	<!-- START -->
-	<section class="blog-head">
-		<div class="container">
-			<div class="blog-head-inn">
-				<h1>Pra Nikah</h1>
-				<p>Bersiaplah dengan wawasan dan tips terbaik untuk merancang pernikahan impian Anda.</p>
-			</div>
-		</div>
-	</section>
-	<!--END-->
-	<!-- START -->
-	<section class=" blog-body">
-		<div class="container">
-			<div class="us-ppg-com us-ppg-blog">
-				<ul id="intseres">
-					<li>
-						<div class="pro-eve-box">
-							<div>
-								<img src="{% static 'myapp/images/gambar_pranikah.jpg' %}" alt="">
-							</div>
-							<div>
-								<p>10, Dec 2024</p>
-								<h2>Pranikah1</h2>
-								<a href="{% url 'blog-details' %}" class="fclick">&nbsp;</a>						</div>
-					</li>
-                    <li>
-						<div class="pro-eve-box">
-							<div>
-								<img src="{% static 'myapp/images/gambar_pranikah.jpg' %}" alt="">
-							</div>
-							<div>
-								<p>10, Dec 2024</p>
-								<h2>Pranikah2</h2>
-								<a href="{% url 'blog-details' %}" class="fclick">&nbsp;</a>						</div>
-						</div>
-					</li>
-                    <li>
-						<div class="pro-eve-box">
-							<div>
-								<img src="{% static 'myapp/images/gambar_pranikah.jpg' %}" alt="">
-							</div>
-							<div>
-								<p>10, Dec 2024</p>
-								<h2>Pranikah3</h2>
-								<a href="{% url 'blog-details' %}" class="fclick">&nbsp;</a>						</div>
-						</div>
-					</li>
-                    <li>
-						<div class="pro-eve-box">
-							<div>
-								<img src="{% static 'myapp/images/gambar_pranikah.jpg' %}" alt="">
-							</div>
-							<div>
-								<p>10, Dec 2024</p>
-								<h2>Pranikah4</h2>
-								<a href="{% url 'blog-details' %}" class="fclick">&nbsp;</a>						</div>
-						</div>
-					</li>
-                    <li>
-						<div class="pro-eve-box">
-							<div>
-								<img src="{% static 'myapp/images/gambar_pranikah.jpg' %}" alt="">
-							</div>
-							<div>
-								<p>10, Dec 2024</p>
-								<h2>Pranikah5</h2>
-								<a href="{% url 'blog-details' %}" class="fclick">&nbsp;</a>						</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<!--END-->
+<!-- START -->
+<section class="blog-head">
+    <div class="container">
+        <div class="blog-head-inn">
+            <h1>Pra Nikah</h1>
+            <p>Bersiaplah dengan wawasan dan tips terbaik untuk merancang pernikahan impian Anda.</p>
+        </div>
+    </div>
+</section>
+<!-- END -->
+
+<!-- START -->
+<section class="blog-body">
+    <div class="container">
+        <div class="us-ppg-com us-ppg-blog">
+            <ul id="intseres">
+                {% for kelas in kelas_pranikah %}
+                <li>
+                    <div class="pro-eve-box">
+                        <div>
+                            {% if kelas.gambar %}
+                                <img src="{{ kelas.gambar.url }}" alt="{{ kelas.nama_kelas }}">
+                            {% else %}
+                                <img src="{% static 'myapp/images/default-image.jpg' %}" alt="Default Image">
+                            {% endif %}
+                        </div>
+                        <div>
+                            <p>{{ kelas.tanggal|date:"d, M Y" }}</p>
+                            <h2>{{ kelas.nama_kelas }}</h2>
+                            <!-- Gunakan filter |safe di sini untuk menampilkan deskripsi dalam format HTML -->
+                            <p>{{ kelas.deskripsi|safe|truncatewords:15 }}</p>
+                            <a href="{% url 'blog-details' kelas.id %}" class="btn btn-primary">Lihat Detail</a>
+                        </div>
+                    </div>
+                </li>
+                {% empty %}
+                <li>
+                    <p>Belum ada kelas pranikah yang tersedia.</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- END -->
 {% endblock %}

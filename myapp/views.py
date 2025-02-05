@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect , get_object_or_404
 from .forms import PranikahForm
 from .models import Pranikah
 from django.contrib import messages
@@ -17,12 +17,13 @@ def all_products(request):
     return render(request, 'myapp/all-products.html')
 
 # Halaman detail blog
-def blog_details(request):
-    return render(request, 'myapp/blog-details.html')
+def blog_details(request, id):
+    kelas = get_object_or_404(Pranikah, id=id)
+    return render(request, 'myapp/blog-details.html', {'kelas': kelas})
 
-# Halaman daftar blog
 def blog_posts(request):
-    return render(request, 'myapp/blog-posts.html')
+    kelas_pranikah = Pranikah.objects.all().order_by('-tanggal')  # Mengambil semua kelas pranikah, diurutkan berdasarkan tanggal terbaru
+    return render(request, 'myapp/blog-posts.html', {'kelas_pranikah': kelas_pranikah})
 
 # Halaman kontak kami
 def contact_us(request):

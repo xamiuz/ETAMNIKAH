@@ -1,92 +1,94 @@
 {% extends 'myapp/headfooter2.html' %}
 {% load static %}
+
 {% block content %}
-	<section class="eve-deta-pg py-5">
-		<div class="container">
-			<div class="eve-deta-pg-main">
-				<div class="lhs">
-					<div class="img">
-						<img src="{% static 'myapp/images/gambar_pranikah.jpg' %}" class="card-img-top" alt="Pranikah">
-					</div>
-					<div class="head"> <span class="dat"><b>07</b> Jan</span>
-						<h1>Pranikah eps 1</h1>
-					</div>
-				</div>
-				<div class="rhs">
-					<div class="list-rhs-form pglist-bg pglist-p-com">
-						<div class="quote-pop">
-							<h3>Ikuti Zoom ini!</h3>
-							<div id="blog_detail_enq_success" class="log" style="display: none;">
-								<p>Your Enquiry Is Submitted Successfully</p>
-							</div>
-							<div id="blog_detail_enq_same" class="log" style="display: none;">
-								<p>You cannot make enquiry on your own blog</p>
-							</div>
-							<div id="blog_detail_enq_fail" class="log" style="display: none;">
-								<p>Something Went Wrong!!!</p>
-							</div>
-							<form method="post" name="blog_detail_enquiry_form" id="blog_detail_enquiry_form">
-								<input type="hidden" class="form-control" name="blog_id" value="17" placeholder="" required>
-								<input type="hidden" class="form-control" name="listing_user_id" value="44" placeholder="" required>
-								<input type="hidden" class="form-control" name="enquiry_sender_id" value="37" placeholder="" required>
-								<input type="hidden" class="form-control" name="enquiry_source" value="Website" placeholder="" required>
-								<div class="form-group">
-									<input type="text" name="enquiry_name" value="Rn53 Themes" required="required" class="form-control" placeholder="Enter name*">
-								</div>
-								<div class="form-group">
-									<input type="email" class="form-control" placeholder="Enter email*" required="required" value="rn53themes@gmail.com" name="enquiry_email" pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$" title="Invalid email address">
-								</div>
-								<div class="form-group">
-									<input type="text" class="form-control" value="5522114422" name="enquiry_mobile" placeholder="Enter mobile number *" pattern="[7-9]{1}[0-9]{9}" title="Phone number starting with 7-9 and remaing 9 digit with 0-9" required>
-								</div>
-								<div class="form-group">
-									<textarea class="form-control" rows="3" name="enquiry_message" placeholder="Enter your query or message"></textarea>
-								</div>
-								<input type="hidden" id="source">
-								<button type="submit" name="enquiry_submit" class="btn btn-primary">Pembayaran</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--END-->
-	<!-- START -->
-	<section class=" eve-deta-body blog-deta-body">
-		<div class="container">
-			<div class="eve-deta-body-main">
-				<div class="lhs">
-					<p>Pra-Nikah adalah langkah awal yang penting untuk memastikan kehidupan rumah tangga berjalan lancar. Dalam sesi ini, Anda akan mendapatkan wawasan tentang komunikasi, manajemen keuangan, dan persiapan mental untuk menghadapi kehidupan pernikahan.</p>
-					<p>Peserta akan bergabung dalam sesi Zoom interaktif yang diisi oleh narasumber terpercaya. Setelah mengikuti sesi ini, peserta akan mendapatkan <strong>sertifikat resmi Pra-Nikah</strong>.</p>
-					<p>Bergabunglah dengan kami pada <strong>tanggal 07 Januari</strong> untuk memulai langkah awal menuju pernikahan yang bahagia dan sukses.</p>
-				</div>
-			<div class="pro-bot-shar">
-				<h4>Share this post</h4>
-				<ul>
-					<li>
-						<div class="sh-pro-shar sh-pro-face"> <a target="_blank" href="https://www.facebook.com/sharer/sharer.html?u=blog/12-days-fitness-chanllege?src=facebook&quote=12 Days Fitness Chanllege">Facebook</a>
-						</div>
-					</li>
-					<li>
-						<div class="sh-pro-shar sh-pro-twi"> <a target="_blank" href="http://twitter.com/share?text=12 Days Fitness Chanllege&url=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fblog%2F12-days-fitness-chanllege%3Fsrc%3Dtwitter">Twitter</a>
-						</div>
-					</li>
-					<li>
-						<div class="sh-pro-shar sh-pro-what"> <a target="_blank" href="whatsapp://send?text=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fblog%2F12-days-fitness-chanllege%3Fsrc%3Dwhatsapp" data-action="share/whatsapp/share">WhatsApp</a>
-						</div>
-					</li>
-					<li>
-						<div class="sh-pro-shar sh-pro-link"> <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fblog%2F12-days-fitness-chanllege%3Fsrc%3Dlinkedin">Linkedin</a>
-						</div>
-					</li>
-					<li>
-						<div style="background-color: #da271a" class="sh-pro-shar sh-pro-pin"> <a target="_blank" href="https://www.pinterest.com/pin/create/bookmarklet/?media=images/blogs/6153pexels-photo-903171.jpeg&url=http%3A%2F%2Flocalhost%2Fdirectory%2Fbizbook%2Fblog%2F12-days-fitness-chanllege%26%26src%3Dpinterest&description=12 Days Fitness Chanllege">Pinterest</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		
-	</section>
-	<!--END-->
+<section class="eve-deta-pg py-5">
+    <div class="container">
+        <div class="eve-deta-pg-main">
+            <div class="lhs">
+                <div class="img">
+                    {% if kelas.gambar %}
+                        <img src="{{ kelas.gambar.url }}" class="card-img-top" alt="{{ kelas.nama_kelas }}">
+                    {% else %}
+                        <img src="{% static 'myapp/images/default-image.jpg' %}" class="card-img-top" alt="Default Image">
+                    {% endif %}
+                </div>
+                <div class="head">
+                    <span class="dat"><b>{{ kelas.tanggal|date:"d" }}</b> {{ kelas.tanggal|date:"M Y" }}</span>
+                    <h1>{{ kelas.nama_kelas }}</h1>
+                </div>
+            </div>
+            <div class="rhs">
+                <div class="list-rhs-form pglist-bg pglist-p-com">
+                    <div class="quote-pop">
+                        <h3>Ikuti Zoom ini!</h3>
+                        <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="kelas_id" value="{{ kelas.id }}">
+                            <div class="form-group">
+                                <input type="text" name="enquiry_name" required class="form-control" placeholder="Nama Anda*">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email Anda*" required name="enquiry_email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="enquiry_mobile" placeholder="Nomor HP *" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" name="enquiry_message" placeholder="Pesan Anda"></textarea>
+                            </div>
+                            {% if kelas.link_zoom %}
+                                <p><a href="{{ kelas.link_zoom }}" target="_blank" class="btn btn-success">Gabung Zoom</a></p>
+                            {% endif %}
+                            {% if kelas.pembayaran %}
+                                <p><a href="{{ kelas.pembayaran }}" target="_blank" class="btn btn-primary">Pembayaran</a></p>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Deskripsi Kelas -->
+<section class="eve-deta-body blog-deta-body">
+    <div class="container">
+        <div class="eve-deta-body-main">
+            <div class="lhs">
+                <p>{{ kelas.deskripsi|safe }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Share -->
+<section class="pro-bot-shar">
+    <div class="container">
+        <h4>Bagikan kelas ini</h4>
+        <ul>
+            <li>
+                <div class="sh-pro-shar sh-pro-face">
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">Facebook</a>
+                </div>
+            </li>
+            <li>
+                <div class="sh-pro-shar sh-pro-twi">
+                    <a target="_blank" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ kelas.nama_kelas }}">Twitter</a>
+                </div>
+            </li>
+            <li>
+                <div class="sh-pro-shar sh-pro-what">
+                    <a target="_blank" href="https://wa.me/?text={{ request.build_absolute_uri }}">WhatsApp</a>
+                </div>
+            </li>
+            <li>
+                <div class="sh-pro-shar sh-pro-link">
+                    <a target="_blank" href="https://www.linkedin.com/shareArticle?url={{ request.build_absolute_uri }}">LinkedIn</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
 {% endblock %}
